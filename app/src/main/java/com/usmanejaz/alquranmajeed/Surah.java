@@ -46,12 +46,16 @@ public class Surah extends AppCompatActivity {
 
                 String ayatNum = mEditText.getText().toString();
                 mTextView.setText( name  + " " + ayatNum);
-                   int ayatNumber = Integer.parseInt(ayatNum);
+                if(ayatNum.equals("") || ayatNum == null || ayatNum.isEmpty())
+                    return;
+                int ayatNumber = Integer.parseInt(ayatNum);
+
+                   /*
                     data = obj.GetData(SSP +ayatNumber -1, SSP + ayatCount - 1);
                 ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(getApplicationContext(), R.layout.simple_list_item_custom, data);
                 mListView.setAdapter(arrayAdapter);
-
-
+*/
+                mListView.smoothScrollToPositionFromTop(ayatNumber, 0, 500);
                 }
 
         });
